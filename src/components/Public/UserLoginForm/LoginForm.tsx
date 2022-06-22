@@ -41,7 +41,7 @@ const LoginForm = () => {
   const handleSubmitRegistration = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     // await handleSignIn(userEmail, password, setToken);
-    const payload = await axios.post("/handleSignIn", {"username": userEmail,"password": password})
+    const payload = await axios.post("/api/handleSignIn", {"username": userEmail,"password": password})
     setToken(payload);
     setHideForm(true);
     navigate("/manage")
@@ -51,7 +51,7 @@ const LoginForm = () => {
     if(checkPasswordMatch() && checkUserName()){
       // await handleCreateUser(userEmail, password);
       // await axios.post("/handleSignUp", {"username":userEmail,"password":password, "action":"SIGN_UP"})
-      await axios({method:"post",url:"/handleSignUp",data:{username:userEmail,password:password}})
+      await axios({method:"post",url:"/api/handleSignUp",data:{username:userEmail,password:password}})
       toggleConfirmNewUser();
     } else {
       console.log("Username or password is inccorect")
@@ -62,7 +62,7 @@ const LoginForm = () => {
   //because setToken, like in handlSubmitRegistration() above, needs to be set 
   //so the user would have access to the private routes
   const handleConfirmation = async () => {
-   const payload =  await axios({method:"post", url:"/handleConfirmation", data:{username: userEmail, code:confirmationCode}})
+   const payload =  await axios({method:"post", url:"/api/handleConfirmation", data:{username: userEmail, code:confirmationCode}})
    console.log("handleConfirmation payload: ")
    console.log(payload)
   }
