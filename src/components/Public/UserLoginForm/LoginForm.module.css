@@ -1,0 +1,73 @@
+.registration-form-hidden {
+  display: none;
+}
+
+.registration-form {
+  font-size: 12px;
+  max-width: 600px;
+  border: 1px solid black;
+}
+
+.registration-form .registration-form__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.registration-form .registration-form__nav button {
+  font-size: 1.5em;
+  display: block;
+  width: 100%;
+  padding: 1.05em;
+  border: none;
+}
+
+.registration-form .registration-form__nav .registration-form__header-buttons {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+.registration-form .registration-form__body_active {
+  display: block !important;
+}
+
+.registration-form .registration-form__body {
+  width: 90%;
+  margin: 3em auto;
+  border: none;
+  display: none;
+}
+
+.registration-form .registration-form__body label {
+  display: block;
+}
+
+.registration-form .registration-form__body .registration-form_submit-button:hover {
+  background-color: #3a86ff;
+  color: white;
+}
+
+.registration-form input {
+  display: block;
+  font-size: 1.5em;
+  width: 100%;
+  padding: 0.7em;
+  margin: 1em auto;
+  border: none;
+}
+
+.registration-form .registration-form__create-account-body {
+  display: none;
+}
+
+.registration-form .registration-form__confirmation {
+  display: none;
+}
+
+.registration-form .registration-form__confirmation-show {
+  display: block;
+}
+/*# sourceMappingURL=LoginForm.module.css.map */

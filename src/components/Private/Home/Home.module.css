@@ -1,0 +1,10 @@
+.module {
+    
+}
+
+.upload {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -30%);
+
+}

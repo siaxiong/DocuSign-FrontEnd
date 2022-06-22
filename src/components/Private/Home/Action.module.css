@@ -1,0 +1,29 @@
+.module {
+    height: 250px;
+
+}
+
+.module > ul {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    text-align: center;
+}
+
+.module > ul > li {
+    width: 200px;
+    border-radius: 0.2em;
+    margin: 0 0.2em;
+    padding: 1em;
+}
+
+.card:hover {
+    filter: brightness(40%);
+}
+
+
+.card > p {
+    margin-top: 1em;
+    color: white;
+}
+

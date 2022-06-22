@@ -1,0 +1,19 @@
+.module {
+    display: flex;
+    
+}
+
+.border {
+
+}
+
+.sideNav {
+    flex-grow: 2;
+
+
+}
+
+.outlet {
+    flex-grow: 3;
+
+}

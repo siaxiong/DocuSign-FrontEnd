@@ -1,0 +1,27 @@
+.module {
+    border: 1px solid #e3e3e3;
+    background-color: #f4f4f4;
+}
+
+.module > ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+
+}
+.module > ul > li:first-child {
+    pointer-events: none;
+    font-weight: bolder;
+
+} 
+
+.module > ul > li > a {
+    display: block;
+    padding: 2em 3em;
+}
+
+.module > ul > li:hover{
+    background-color: #e3e3e3;
+  
+  }
