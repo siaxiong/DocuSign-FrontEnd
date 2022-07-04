@@ -15,6 +15,8 @@ const LoginForm = () => {
   const [confirmationCode, setConfirmationCode] = useState('');
   const [checkConfirm, setCheckConfirm] = useState(false);
   const [hideForm, setHideForm] = useState(false);
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
 
   const {setToken} = useAuthContext();
   const navigate = useNavigate();
@@ -41,20 +43,20 @@ const LoginForm = () => {
   const handleSubmitRegistration = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     // await handleSignIn(userEmail, password, setToken);
-    const payload = await axios.post("/api/handleSignIn", {"username": userEmail,"password": password})
+    const payload = await axios.post("/api/handleSignIn", {"email": userEmail,"password": password})
     setToken(payload);
     setHideForm(true);
     navigate("/manage")
   }
 
   const createUser = async () => {
-    if(checkPasswordMatch() && checkUserName()){
+    if(checkPasswordMatch() && checkUserName() && checkFirstName() && checkLastName()){
       // await handleCreateUser(userEmail, password);
       // await axios.post("/handleSignUp", {"username":userEmail,"password":password, "action":"SIGN_UP"})
-      await axios({method:"post",url:"/api/handleSignUp",data:{username:userEmail,password:password}})
+      await axios({method:"post",url:"/api/handleSignUp",data:{username:userEmail,password:password,firstName:firstName,lastName:lastName}})
       toggleConfirmNewUser();
     } else {
-      console.log("Username or password is inccorect")
+      console.log("Please check that valid inputs are entered.")
     }
   }
 
@@ -62,7 +64,7 @@ const LoginForm = () => {
   //because setToken, like in handlSubmitRegistration() above, needs to be set 
   //so the user would have access to the private routes
   const handleConfirmation = async () => {
-   const payload =  await axios({method:"post", url:"/api/handleConfirmation", data:{username: userEmail, code:confirmationCode}})
+   const payload =  await axios({method:"post", url:"/api/handleConfirmation", data:{email: userEmail, code:confirmationCode}})
    console.log("handleConfirmation payload: ")
    console.log(payload)
   }
@@ -74,6 +76,14 @@ const LoginForm = () => {
     return password === confirmPassword;
   }
 
+  const checkFirstName = () => {
+    return firstName != ''
+  }
+
+  const checkLastName = () => {
+    return lastName != ''
+  }
+
   /***************BUILDING BLOCK COMPONENTS FOR THIS COMPONENT*******************/
 
   return (
@@ -83,6 +93,12 @@ const LoginForm = () => {
         <button type="button" onClick={toggleSignIn} className={[Registration["registration-form__create-account-button"],  isActive ? Registration["registration-form__header-buttons"] : null].join(" ")}>Create Account</button>
       </div>      
       <div className={[Registration["registration-form__body"], Registration["registration-form__create-account-body"], isActive && !checkConfirm ? Registration["registration-form__body_active"] : null].join(" ")}>
+        <label>
+          <input type="text" value={firstName} onChange={e=>setFirstName(e.target.value)} placeholder="First Name"/>
+        </label>
+        <label>
+          <input type="text" value={lastName} onChange={e=>setLastName(e.target.value)} placeholder="Last Name"/>
+        </label>
         <label>
           <input type="text" value={userEmail} onChange={e=>setUserEmail(e.target.value)} placeholder="Email"/>
         </label>
