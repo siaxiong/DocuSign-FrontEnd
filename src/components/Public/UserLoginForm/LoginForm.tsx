@@ -44,9 +44,11 @@ const LoginForm = () => {
     e.preventDefault();
     // await handleSignIn(userEmail, password, setToken);
     const payload = await axios.post("/api/handleSignIn", {"email": userEmail,"password": password})
-    setToken(payload);
-    setHideForm(true);
-    navigate("/manage")
+
+    // if(payload.data.Credentials) {
+      setToken(payload.data);
+      setHideForm(true);
+    // }
   }
 
   const createUser = async () => {
