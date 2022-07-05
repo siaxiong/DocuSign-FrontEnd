@@ -45,10 +45,11 @@ const LoginForm = () => {
     // await handleSignIn(userEmail, password, setToken);
     const payload = await axios.post("/api/handleSignIn", {"email": userEmail,"password": password})
 
-    // if(payload.data.Credentials) {
+    if(payload.data.Credentials) {
       setToken(payload.data);
       setHideForm(true);
-    // }
+      
+    }
   }
 
   const createUser = async () => {
