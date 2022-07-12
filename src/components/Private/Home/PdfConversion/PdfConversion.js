@@ -1,23 +1,16 @@
-import React from 'react';
+const fileToBase64 = async (file, cb) => {
+    console.log(file);
+    const reader = new FileReader();
+    let base64 = null;
 
+    reader.onload = function(fileLoadedEvent) {
+        base64 = fileLoadedEvent.target.result;
+        // console.log(base64)
+        cb(base64);
+    };
 
-const fileToBase64 = (file, cb) => {
-  const reader = new FileReader()
-  reader.readAsDataURL(file)
-  reader.onload = function () {
-    cb(null, reader.result.split(',')[1])
-  }
-  reader.onerror = function (error) {
-    cb(error, null)
-  }
-}
+    reader.readAsDataURL(file);
+    return base64;
+};
 
-export const onUploadFileChange = ( {target} ) => {
-  if (target.files < 1 || !target.validity.valid) {
-    return
-  }
-  fileToBase64(target.files[0], (err, result) => {
-    return result;
-  })
-}
-
+export default fileToBase64;

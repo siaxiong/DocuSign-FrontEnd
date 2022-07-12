@@ -12,6 +12,7 @@ function ProtectedRoute({children}:CountProviderProps) {
     
     const {myToken} = useAuthContext();
     console.log(myToken);
+
     myToken ? console.log("myToken exist") : console.log("myToken does NOT exist");
 
     return myToken ? <React.Fragment><Outlet/></React.Fragment> :  <Navigate to="/" replace />

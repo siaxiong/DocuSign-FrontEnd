@@ -4,10 +4,12 @@ import Action from './Action';
 import Upload from './Upload';
 
 export default function Home() {
+
+
   return (
     <div>
       <Action/>
-      <Upload cname={`${HomeCSS.upload}`}/>      
+      <Upload cname={`${HomeCSS.upload}`}/>    
     </div>
   )
 }

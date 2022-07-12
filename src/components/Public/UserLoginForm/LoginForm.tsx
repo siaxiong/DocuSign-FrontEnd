@@ -9,9 +9,9 @@ import axios from "axios";
 /**************************************************/
 
 const LoginForm = () => {
-  const [userEmail, setUserEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [userEmail, setUserEmail] = useState('siaxiong2@csus.edu');
+  const [password, setPassword] = useState('newpadd');
+  const [confirmPassword, setConfirmPassword] = useState('newpadd');
   const [confirmationCode, setConfirmationCode] = useState('');
   const [checkConfirm, setCheckConfirm] = useState(false);
   const [hideForm, setHideForm] = useState(false);
@@ -44,7 +44,6 @@ const LoginForm = () => {
     e.preventDefault();
     // await handleSignIn(userEmail, password, setToken);
     const payload = await axios.post("/api/handleSignIn", {"email": userEmail,"password": password})
-
     if(payload.data.Credentials) {
       setToken(payload.data);
       setHideForm(true);
