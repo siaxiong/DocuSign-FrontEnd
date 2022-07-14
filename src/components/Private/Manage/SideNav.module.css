@@ -1,7 +1,7 @@
 
 .module {
     height: 100vh;
-    min-width: 250px;
+    min-width: 200px;
 
     display: flex;
     flex-direction: column;
@@ -10,17 +10,6 @@
 
 .module > * {
     margin: 0.5em 0;
-}
-.module > button {
-    border: none;
-    padding: 1.2em 1em;
-    margin: 1em 1em 0 1em;
-    border-radius: 0.3em;
-    background-color: rgb(255, 206, 0);
-}
-
-.module > button:hover {
-    filter: brightness(90%);
 }
 
 .module > p {
@@ -34,6 +23,11 @@ ul > li > a {
     padding: 1em;
 }
 
+.module > .ul > li:hover {
+    background-color: #e3e3e3;
+
+}
+
 .upload {
     border: none;
     padding: 1em 1em;
@@ -42,6 +36,10 @@ ul > li > a {
     width: 150px;
     background-color: rgb(255, 206, 0);
     text-align: center;
+}
+
+.upload:hover {
+    filter: brightness(90%);
 }
 
 

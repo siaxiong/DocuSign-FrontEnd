@@ -4,9 +4,7 @@ import { fileToBase64 } from "./PdfConversion/PdfConversion";
 import { useAuthContext } from "../../Auth/AuthContext/AuthContext";
 import axios from "axios";
 
-export default function Upload(props) {
-    const [fileName, setFileName] = useState("");
-    const [base64, setBase64] = useState("");
+export default function Upload(props) {;
     const {myToken} = useAuthContext();
 
     const execute = async (e) => {

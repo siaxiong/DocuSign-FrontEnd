@@ -36,7 +36,6 @@ root.render(
                 <Route path="add" element={<Add/>}/>
                 <Route path="form" element={<Form/>}/>
               </Route>
-
             </Route>
         </Route>
       </Routes>

@@ -45,7 +45,10 @@ const LoginForm = () => {
     // await handleSignIn(userEmail, password, setToken);
     const payload = await axios.post("/api/handleSignIn", {"email": userEmail,"password": password})
     if(payload.data.Credentials) {
+      const files = await axios('/api/db/getAllFiles', {headers: {"Authorization": `Bearer ${payload.data.jwt}`}})
+      payload.data.files = files.data;
       setToken(payload.data);
+
       setHideForm(true);
       
     }
