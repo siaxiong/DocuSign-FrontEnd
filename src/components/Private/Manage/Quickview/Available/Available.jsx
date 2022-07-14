@@ -1,10 +1,9 @@
 import React, {useRef, useEffect, useState} from 'react'
 import WebViewer from '@pdftron/webviewer'
 // import axios from 'axios';
-import {useAuthContext} from '/Users/siaxiong/Desktop/DocuSign/FrontEnd/src/components/Auth/AuthContext/AuthContext.ts'
 import axios from 'axios';
 import AvailableCSS from './AvailableCSS.module.css';
-
+import {useAuthContext} from 'components/Auth/AuthContext/AuthContext.ts'
 
 
 function Available() {

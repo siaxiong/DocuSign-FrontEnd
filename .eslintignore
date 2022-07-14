@@ -1,2 +1,6 @@
 **/*.jsx
 build/
+node_modules
+public
+.vscode
+.github

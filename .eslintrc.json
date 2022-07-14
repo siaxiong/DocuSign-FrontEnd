@@ -3,7 +3,7 @@
         "browser": true,
         "es6": true
     },
-    "extends": ["eslint:recommended", "google"],
+    "extends": ["eslint:recommended", "airbnb"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
