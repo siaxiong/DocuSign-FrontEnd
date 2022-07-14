@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function Deleted() {
-  return (
-    <div>deleted</div>
-  )
+	return (
+		<div>deleted</div>
+	);
 }
 
-export default Deleted
+export default Deleted;

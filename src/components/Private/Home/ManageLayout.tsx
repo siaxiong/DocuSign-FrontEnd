@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 
 function ManageLayout() {
-  return (
-    // <Outlet/>
-    <>lorem ipsum</>
+	return (
+	// <Outlet/>
+		<>lorem ipsum</>
 
-    )
+	);
 }
 
-export default ManageLayout
+export default ManageLayout;

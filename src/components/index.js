@@ -10,14 +10,14 @@ import Available from "./Private/Manage/Quickview/Available/Available";
 import PdfViewer from "./Private/Manage/PdfViewer";
 
 export {
-    Home,
-    Manage,
-    Deleted,
-    Completed,
-    Pending,
-    Required,
-    PdfViewer,
-    Available,
-    Add,
-    Form,
+	Home,
+	Manage,
+	Deleted,
+	Completed,
+	Pending,
+	Required,
+	PdfViewer,
+	Available,
+	Add,
+	Form,
 };

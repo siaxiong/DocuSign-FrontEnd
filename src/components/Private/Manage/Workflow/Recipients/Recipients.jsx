@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function Recipients() {
-  return (
-    <div>Recipients</div>
-  )
+	return (
+		<div>Recipients</div>
+	);
 }
 
-export default Recipients
+export default Recipients;

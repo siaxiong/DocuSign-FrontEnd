@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function Pending() {
-  return (
-    <div>pending</div>
-  )
+	return (
+		<div>pending</div>
+	);
 }
 
-export default Pending
+export default Pending;

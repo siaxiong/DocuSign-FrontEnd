@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 function Add() {
-  return (
-    <div>Add    </div>
+	return (
+		<div>Add    </div>
 
-  )
+	);
 }
 
-export default Add
+export default Add;

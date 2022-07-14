@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import PdfViewerCSS from './PdfViewer.module.css';
 // import { Document,Page } from 'react-pdf/dist/esm/entry.webpack';
 // import {PDFDocument, PDFEmbeddedPage} from 'pdf-lib';
@@ -8,12 +8,12 @@ import React from 'react';
 
 function PdfViewer() {
     
-    return (
-        <div> 
+	return (
+		<div> 
             PdfViewer file
-        </div>
+		</div>
 
-    )
+	);
 }
 
-export default PdfViewer
+export default PdfViewer;

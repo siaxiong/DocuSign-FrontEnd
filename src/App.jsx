@@ -1,25 +1,25 @@
-import React from 'react'
-import style from './App.css';
-import FrontPage from './components/Public/LandingLayout/FrontPage';
-import {useAuthContext} from './components/Auth/AuthContext/AuthContext'
-import {Outlet} from "react-router-dom"
+import React from "react";
+import style from "./App.css";
+import FrontPage from "./components/Public/LandingLayout/FrontPage";
+import {useAuthContext} from "./components/Auth/AuthContext/AuthContext";
+import {Outlet} from "react-router-dom";
 // import Manage from './components/Private/Manage/Manage';
 // import Home from './components/Private/Home/Home'
-import TopNav from './components/Public/TopNav/TopNav';
+import TopNav from "./components/Public/TopNav/TopNav";
 
 function App() {
 
-  const {myToken} = useAuthContext();
+	const {myToken} = useAuthContext();
 
-  return (
-      <div className={style.center}>  
-      <TopNav/>
-      {
-        myToken ? <Outlet/> : <FrontPage/>    
-      }    
+	return (
+		<div className={style.center}>  
+			<TopNav/>
+			{
+				myToken ? <Outlet/> : <FrontPage/>    
+			}    
 
-      </div>
-  )
+		</div>
+	);
 }
 
-export default App
+export default App;

@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 // import PdfViewer from './PdfViewer';
 
 function Required() {
-  return (
-    <div>
+	return (
+		<div>
       Required
-    </div>
-  )
+		</div>
+	);
 }
 
-export default Required
+export default Required;
