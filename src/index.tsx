@@ -34,7 +34,7 @@ root.render(
 							<Route path="available" element={<Available/>}/>
 							<Route path="deleted" element={<Deleted/>}/>
 							<Route path="add" element={<Add/>}/>
-							<Route path="form" element={<Form/>}/>
+							<Route path=":formName" element={<Form/>}/>
 						</Route>
 					</Route>
 				</Route>
