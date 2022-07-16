@@ -3,8 +3,6 @@ import React from "react";
 import AvailableCSS from "./AvailableCSS.module.css";
 import {useAuthContext} from "components/Auth/AuthContext/AuthContext.ts";
 import {Link} from "react-router-dom";
-import { Outlet } from "react-router-dom";
-
 
 function Available() {
 	const {myToken} = useAuthContext();
@@ -19,7 +17,6 @@ function Available() {
 	return (
 		<div>
 			{files}
-			<Outlet/>
 		</div>
 	);
 }
