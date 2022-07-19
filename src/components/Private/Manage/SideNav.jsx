@@ -10,7 +10,7 @@ function SideNav() {
 			<Link to="/add" className={SideNavCSS.upload}>Add Document</Link>
 			<p className=''>WORKFLOW</p>
 			<ul className={`${SideNavCSS.ul} ${SideNavCSS.envelope}`}>
-				<li><Link to="required">Required</Link></li>
+				<li><Link to="required">Action Required</Link></li>
 				<li><Link to="pending">Pending</Link></li>
 				<li><Link to="completed">Completed</Link></li>
 			</ul>

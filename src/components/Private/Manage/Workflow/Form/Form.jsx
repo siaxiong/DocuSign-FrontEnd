@@ -32,7 +32,7 @@ function Available() {
 			path: "../lib"
 		}, viewerDiv.current).then(async instance =>{  
 
-			await axios("/api/db/getFile", {params: {fileName: formName},headers: {"Authorization": `Bearer ${myToken.jwt}`}})
+			await axios("/api/db/getFile", {params: {fileName: myToken.email + "/" + formName},headers: {"Authorization": `Bearer ${myToken.jwt}`}})
       
 				.then(res=>{
 					console.log("🚀 -------------------------------------------------------------🚀");
@@ -40,6 +40,9 @@ function Available() {
 					console.log("🚀 -------------------------------------------------------------🚀");
 					instance.UI.loadDocument(base64ToBlob(res.data), {extension: "pdf"});
 					const { documentViewer, annotationManager } = instance.Core;
+
+					// instance.UI.disableElements(["header"]);
+
   
 					documentViewer.addEventListener("documentLoaded", () => {
 						console.log("documentLoaded event!");
@@ -56,6 +59,9 @@ function Available() {
 	return (
 		<div>
 			<p>{formName}</p>
+			<div>
+
+			</div>
 			<div className='webviewer' ref={viewerDiv} style={{height: "100vh"}}></div>
 		</div>
 	);
