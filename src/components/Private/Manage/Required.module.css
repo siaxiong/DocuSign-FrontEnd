@@ -1,0 +1,17 @@
+
+.listItem {
+    display: flex;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.listItem:hover {
+    background-color: #e3e3e3;
+
+}
+
+.listItem > a {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    cursor: pointer;
+}

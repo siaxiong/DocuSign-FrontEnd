@@ -30,7 +30,7 @@ function Available() {
 	
 
 	const files = <ul>
-		{allFiles?.map((file, index) => <li className={AvailableCSS["listItem"]} key={index}><Link to={`/manage/${(file.fileName).substring((file.fileName).lastIndexOf("/")+1)}`}>{(file.fileName).substring((file.fileName).lastIndexOf("/")+1)}</Link></li>) ?? <li></li>}
+		{allFiles?.map((file, index) => <li className={AvailableCSS["listItem"]} key={index}><Link to={`/manage/form${"?" + (file.fileName).replace("/", "=")}`}>{(file.fileName).substring((file.fileName).lastIndexOf("/")+1)}</Link></li>) ?? <li></li>}
 
 		{/* {myToken.files.map((file, index) => <li className={AvailableCSS["listItem"]} key={index}><a value={file.fileName} onClick={(e)=>setFileName(e.target.value)}>{file.fileName}</a></li>)} */}
 	</ul>;
