@@ -2,8 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import SideNav from "./SideNav";
 import style from "./Document.module.css";
-import DocumentHeader from "./DocumentHeader";
-
 
 function Manage() {
 	return (
@@ -14,7 +12,6 @@ function Manage() {
 					<SideNav/>
 				</div>
 				<div id='outlet' className={`${style.border} ${style.outlet}`}>
-					<DocumentHeader/>
 					<Outlet/>
 				</div>
 			</div>

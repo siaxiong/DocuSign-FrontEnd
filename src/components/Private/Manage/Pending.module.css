@@ -1,0 +1,50 @@
+
+.listItem {
+    /* display: flex; */
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.listItem:hover {
+    background-color: #e3e3e3;
+}
+
+.listItem_NoHover {
+    /* display: flex; */
+    /* border-bottom: 1px solid #e3e3e3; */
+    border-bottom: 1px solid red;
+
+}
+.listItem_NoHover:hover {
+    background-color: white;
+}
+
+.listItem > a {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pendingUserUL_Show {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    /* cursor: pointer; */
+
+}
+
+.pendingUserUL_Hidden {
+    display: none;
+}
+
+.pendingUserLI {
+    padding: 0.5em;
+    border-bottom: 1px solid #e3e3e3;
+    pointer-events: none;
+}
+
+.strikeThrough {
+    text-decoration: line-through;
+}
+

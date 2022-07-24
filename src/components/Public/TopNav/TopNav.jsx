@@ -32,8 +32,8 @@ export default function TopNav() {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/manage">Manage</Link></li>
           <li><Link to="/">Profile</Link></li>
-          <li><Link to="/">Form</Link></li>
-          <li><button onClick={logout}>Logout</button></li>
+          <li><a onClick={logout}>Logout</a></li>
+          {/* <li><button onClick={logout}>Logout</button></li> */}
         </ul> 
         :       
         <ul>

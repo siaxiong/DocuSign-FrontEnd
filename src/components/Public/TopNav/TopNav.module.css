@@ -19,6 +19,7 @@
 .module > ul > li > a {
     display: block;
     padding: 2em 3em;
+    cursor: pointer;
 }
 
 .module > ul > li:hover{

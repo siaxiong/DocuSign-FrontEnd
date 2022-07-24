@@ -4,7 +4,7 @@
 }
 .module > ul {
     display: flex;
-    justify-content: space-around;
+    margin: 0 0 1em 0;
 }
 .module > ul > li {
     font-size: 0.9em;

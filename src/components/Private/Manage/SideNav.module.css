@@ -8,24 +8,29 @@
     background-color: #f4f4f4;
 }
 
-.module > * {
-    margin: 0.5em 0;
+.module > * > * {
+    padding: 0 1em
 }
 
 .module > p {
-    padding: 1em;
     font-weight: 500;
 }
 
 
 .module > ul > li > a {
     display: block;
-    padding: 1em;
+    padding: 1.5em 0;
 }
 
 .module > .ul > li:hover {
     background-color: #e3e3e3;
 
+}
+
+.module > .ul > .noHover {
+    pointer-events: none;
+    font-weight: 500;
+    padding: 1em;
 }
 
 .upload {
@@ -40,14 +45,4 @@
 
 .upload:hover {
     filter: brightness(90%);
-}
-
-
-
-.envelope {
-
-}
-
-.view {
-
 }

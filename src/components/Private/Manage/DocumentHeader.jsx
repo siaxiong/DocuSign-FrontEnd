@@ -10,9 +10,6 @@ function DocumentHeader() {
 		<div className={DocumentHeaderCSS.module}>
 			<ul>
 				<Link to="/manage/available" className={DocumentHeaderCSS.backButton}>Back</Link>
-				<li>Name</li>
-				<li>Status</li>
-				<li>Last Change</li>
 			</ul>
 		</div>
 	);
