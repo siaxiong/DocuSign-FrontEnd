@@ -46,6 +46,7 @@ const LoginForm = () => {
     const payload = await axios.post("/api/handleSignIn", {"email": userEmail,"password": password})
     if(payload.data.Credentials) {
       setToken(payload.data);
+      sessionStorage.setItem("/api/handleSignUp", JSON.stringify(payload.data));
       setHideForm(true);
     }
   }
