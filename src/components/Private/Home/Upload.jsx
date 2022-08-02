@@ -1,54 +1,100 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, {useState} from "react";
+import React, {useState, CSSProperties} from "react";
 import UploadCSS from "./Upload.module.css";
 import { fileToBase64 } from "./PdfConversion/PdfConversion";
 import { useAuthContext } from "../../Auth/AuthContext/AuthContext";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { 
+	faXmark,
+} from "@fortawesome/free-solid-svg-icons";
+import { PulseLoader } from "react-spinners";
+
 
 export default function Upload(props) {
 	const {myToken} = useAuthContext();
 	const regex = new RegExp(":", "g");
+	const [file, setFile] = useState(null);
+	const [notPDF, setNotPDF] = useState(false);
+	let [loading, setLoading] = useState(false);
+	let [color, setColor] = useState("rgb(255, 206, 0)");
 
 
-	const execute = async (e) => {
+
+	const saveFileState = async (e) => {
 		//e.target.files[0] reads "/" as ":" so have to replace ":" back to "/"
+
+		setNotPDF(false);
 		let modifiedFile = new File([e.target.files[0]], myToken.email + "/" + (e.target.files[0].name).replaceAll(regex, "/"));
-		const file = new FormData();
-		console.log(modifiedFile);
-		file.append("file", modifiedFile);
-		axios.post("/api/db/handleAddPdf", file, {headers: {"Authorization": `Bearer ${myToken.jwt}`}}).then(res=>console.log(res));
+		if (!(modifiedFile.name).endsWith(".pdf")) {
+			console.log("The file is not a PDF!");
+			setNotPDF(true);
+			return;
+		}
+		const tempFile = new FormData();
+		tempFile.append("file", modifiedFile);
+		setFile(tempFile);
 	};
 
-	const deleteFile = () => {
-		axios.delete("/api/db/deleteFile", {data: {fileName: "siax/Sia-Xiong-Resume.pdf", token: myToken.Credentials}, headers: {"Authorization": `Bearer ${myToken.jwt}`}}).then(res=>console.log(res));
+	const startUpload = async () => {
+		setLoading(true);
+		await axios.post("/api/db/handleAddPdf", file, {headers: {"Authorization": `Bearer ${myToken.jwt}`}}).then(res=>console.log(res)).catch(error=>console.log(error));
+		setFile(null);
+		setLoading(false);
 	};
 
-	const getFile = () => {
-		console.log("axios(getFile)");
-		axios.get("/api/db/getFile", {params: {fileName: "decoded-file.pdf"}, headers: {"Authorization": `Bearer ${myToken.jwt}`}}).then(res=>console.log(res));
+	const removedPickedFile = async () => {
+		setFile(null);
 	};
 
-	const getAllFiles = () => {
-		console.log("axios(getAllFiles)");
-		axios.get("/api/db/getAllFiles", {headers: {"Authorization": `Bearer ${myToken.jwt}`}}).then(res=>console.log(res));
-	};
-	const getAllEmails = () => {
-		console.log("axios(getAllEmails)");
-		axios.get("/api/db/getAllEmails", {headers: {"Authorization": `Bearer ${myToken.jwt}`}}).then(res=>console.log(res));
+
+	const override = {
+		display: "block",
+		margin: "0 auto",
+		borderColor: "red",
 	};
 
 	return (
 		<div className={UploadCSS.module}>
 			<div className={`${UploadCSS.box} ${props.cname}`}>
-				<p>Upload a document to get started</p>
-				<input type="file" id='uploadInput' name="file" onChange={e=>execute(e)} className={UploadCSS.uploadInput}  />
-				<label className={UploadCSS.uploadLabel} htmlFor="uploadInput">Upload file</label>
-				<button onClick={deleteFile}>Delete File</button>
-				<button onClick={getFile}>GetFile</button>
-				<button onClick={getAllFiles}>GetAllFiles</button>
-				<button onClick={getAllEmails}>GetAllEmails</button>
+
+				{
+					(file && !loading) ? 
+						<>
+							<label className={UploadCSS.uploadLabel} htmlFor="uploadInput">{file ? "Confirm" : "Upload"}</label>
+							<input type="button" id="uploadInput" style={{display: "none"}} onClick={startUpload}/> 
+							<FontAwesomeIcon onClick={removedPickedFile} icon={faXmark } color={"black"} size="lg" /> 
+							<p style={{color: "black"}}>{(file.get("file").name).substring((file.get("file").name).indexOf("/")+1)}</p> 
+						</> : null
+				}
+				{
+					(!file && !loading) ? 
+						<>
+							<p>Upload a PDF document to get started</p>
+							<input type="file" id='uploadInput' name="file" onChange={e=>saveFileState(e)} className={UploadCSS.uploadInput} />
+							<label className={UploadCSS.uploadLabel} htmlFor="uploadInput">{file ? "Confirm" : "Upload"}</label>
+				
+						</> : null
+				}
+
+				{
+					loading ? <>
+						<PulseLoader speedMultiplier={1} color={color} loading={loading} cssOverride={override} size="1em" /> 
+						<p>Uploading</p>
+					</>: null
+				}
+
+				{notPDF ? <p style={{color: "red"}}>The file is not a PDF. Please select only PDF files.</p> : null}
+				{/* {file ? 
+					<>
+						<FontAwesomeIcon onClick={removedPickedFile} icon={faXmark } color={"black"} size="lg" /> 
+						<p style={{color: "black"}}>{(file.get("file").name).substring((file.get("file").name).indexOf("/")+1)}</p> 
+					</> :
+					null
+				}  */}
+
 			</div>
 		</div>
 	);

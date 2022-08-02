@@ -29,7 +29,7 @@
 .pendingUserUL_Show {
     display: block;
     width: 100%;
-    padding: 1em;
+    padding: 1em 0;
     /* cursor: pointer; */
 
 }
@@ -46,5 +46,56 @@
 
 .strikeThrough {
     text-decoration: line-through;
+}
+
+
+.listItem-header {
+    padding: 1em;
+    display: flex;
+    border-bottom: 1px solid #888686;
+
+}
+
+.listItem-header > p {
+    flex: 1;
+}
+
+.listItem {
+    display: flex;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.listItem_hidden {
+    display: none;
+}
+
+.listItem:hover {
+    background-color: #e3e3e3;
+
+}
+
+.listItem > a {
+    display: flex;
+    width: 100%;
+    padding: 1em;
+    cursor: pointer;
+
+}
+
+.listItem > a > * {
+    flex: 1;
+}
+
+.listItem > a > p:first-child {
+    margin-right: 0.5em;
+}
+
+/* .listItem-top {
+    flex: 1;
+} */
+
+.listItem-top > p {
+    display: inline-block;
+    margin-right: 0.5em;
 }
 

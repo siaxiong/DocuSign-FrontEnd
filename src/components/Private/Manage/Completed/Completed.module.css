@@ -1,0 +1,49 @@
+.list__header {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #888686;
+}
+
+.list__header p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.list__item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.list__item a p:first-child {
+  margin-right: 0.5em;
+}
+
+.list__item:hover {
+  background-color: #e3e3e3;
+}
+
+.list__item-top {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.list__item-top p {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+/*# sourceMappingURL=Completed.module.css.map */

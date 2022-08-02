@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import {Deleted, Completed, Pending, Required,
+import {Deleted, Completed, Pending, Require,
 	Form, Add, PdfViewer,Available, Home} from "./components/index";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import AuthProvider from "./components/Auth/AuthProvider/AuthProvider";
@@ -26,7 +26,7 @@ root.render(
 						<Route index element={<Home/>}/>
 						<Route path="manage" element={<Manage/>} >
 							<Route index element={<Available/>}/>
-							<Route path="required" element={<Required/>}>
+							<Route path="require" element={<Require/>}>
 								<Route path="pdfViewer" element={<PdfViewer/>}/>
 							</Route>
 							<Route path="pending" element={<Pending/>}/>
@@ -36,6 +36,8 @@ root.render(
 							<Route path="add" element={<Add/>}/>
 							<Route path=":formName" element={<Form/>}/>
 						</Route>
+					</Route>
+					<Route path="public" element={<Manage/>}>
 					</Route>
 				</Route>
 			</Routes>

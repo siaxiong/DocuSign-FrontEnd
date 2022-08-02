@@ -1,0 +1,52 @@
+.header {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.header button {
+  display: inline-block;
+  padding: 0.8em;
+  border-width: 0;
+  margin: 1em;
+}
+
+.header .select-button {
+  margin-right: 2em;
+}
+
+.list__header {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #888686;
+}
+
+.list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.list__item a {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.list__item:hover {
+  background-color: #e3e3e3;
+}
+
+.list__item-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.list__item-top p {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+/*# sourceMappingURL=Available.module.css.map */

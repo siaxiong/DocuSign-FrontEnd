@@ -15,7 +15,9 @@
 .module > p {
     font-weight: 500;
 }
-
+.clickedTab {
+    background-color: #e3e3e3;
+}
 
 .module > ul > li > a {
     display: block;
@@ -26,6 +28,7 @@
     background-color: #e3e3e3;
 
 }
+
 
 .module > .ul > .noHover {
     pointer-events: none;

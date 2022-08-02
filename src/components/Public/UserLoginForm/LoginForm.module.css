@@ -5,6 +5,9 @@
 .registration-form {
   font-size: 12px;
   max-width: 600px;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   border: 1px solid black;
 }
 

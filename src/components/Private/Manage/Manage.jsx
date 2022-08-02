@@ -1,12 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import SideNav from "./SideNav";
+import SideNav from "./SideNav/SideNav";
 import style from "./Document.module.css";
 
 function Manage() {
 	return (
 		<>
-			{console.log("Managed is called")}
 			<div className={style.module}>
 				<div className={`${style.border} ${style.SideNav}`}>
 					<SideNav/>

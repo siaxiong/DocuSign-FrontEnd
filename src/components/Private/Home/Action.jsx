@@ -41,13 +41,13 @@ function Action() {
 		<div className={ActionCSS.module} style={{background:`url(${image})`}}>
 			<ul>
 				<li>
-					<Link to="/manage/required">
+					<Link to="/manage/require">
 						<div className={ActionCSS.card}>
 							<div className={ActionCSS.status}>
 								{requiredNum ? <p>{requiredNum}</p> : null}
 								<FontAwesomeIcon icon={faCircleExclamation } color={requiredNum ? "#FF9F29" : "white"} size="lg" /> 
 							</div>
-							<p>Action Required</p>                   
+							<p>Action Require</p>                   
 						</div>
 					</Link>
 				</li>
