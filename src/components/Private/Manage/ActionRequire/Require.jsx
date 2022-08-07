@@ -42,7 +42,7 @@ function Require() {
 					</Link>
 				</li>;
 			})}
-		</ul>;
+		</ul>
 	</ul>;	
 	
 	return (

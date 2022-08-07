@@ -126,6 +126,14 @@ const LoginForm = () => {
           <input  type="text"  value={password} onChange={e=>setPassword(e.target.value.toString())}  placeholder="Password"/>
         </label>
         <input  type="submit" value="Sign In" className={[Registration["registration-form_submit-button"]].join(" ")}/>
+        <p>Use these accounts for testing the website.They all use the same password as above which is "newpadd" or you can create your own account.</p>
+        <ul>
+          <li>siaxiong2@csus.edu</li>
+          <li>siaxiong52@gmail.com</li>
+          <li>siaxiong23@icloud.com</li>
+          <li>siaxiongdev@gmail.com</li>
+    
+        </ul>
       </div>
    </form>
     )

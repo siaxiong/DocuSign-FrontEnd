@@ -25,7 +25,7 @@ function Completed() {
 	}, []);
 	
 
-	const pdfListIUL = <ul>
+	const pdfListUL = <ul>
 		<li className={CompletedCSS["list__header"]}>
 			<p>File Name</p>
 			<p>Signer</p>
@@ -46,7 +46,7 @@ function Completed() {
 
 	return (
 		<div>
-			{pdfArray ? pdfListIUL: <p>No completed files.</p>}
+			{pdfArray ? pdfListUL: <p>No completed files.</p>}
 		</div>
 	);
 }

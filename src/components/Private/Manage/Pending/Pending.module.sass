@@ -1,0 +1,58 @@
+.list__header
+    padding: 1em
+    display: flex
+    border-bottom: 1px solid #888686
+
+    p
+        flex: 1
+
+.list__item
+    display: flex
+    border-bottom: 1px solid #e3e3e3
+
+    > a
+        display: flex
+        width: 100%
+        padding: 1em
+        cursor: pointer
+        user-select: none
+
+        p
+            display: inline-block
+            margin: 0.5em
+
+        p:first-child
+            margin-right: 0.5em
+
+        > * 
+            flex: 1
+
+.list__item:hover
+    background-color: #e3e3e3
+
+.list__item-hidden
+    display: none
+
+    
+.list__item-top
+    flex: 1
+
+    p
+        display: inline-block
+        margin-right: 0.5em
+
+.pendingUserUL_Show
+    display: block
+    width: 100%
+    padding: 1em 0
+
+.pendingUserUL_Hidden
+    display: none
+
+.pendingUserLI
+    padding: 0.5em
+    border-bottom: 1px solid #e3e3e3
+    pointer-events: none
+
+.strike-through
+    text-decoration: line-through

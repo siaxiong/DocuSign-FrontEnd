@@ -24,8 +24,7 @@ export default function TopNav() {
   const toggleDeveloperMode = () => setDeveloperMode(!developerMode);
 
   return (
-    <div className={TopNavCSS.module}>
-
+    <div className={TopNavCSS["Top-Nav"]}>
       
       {
       (myToken && !developerMode) ?       
@@ -35,7 +34,7 @@ export default function TopNav() {
           <li><Link to="/manage">Manage</Link></li>
           <li><Link to="/">Profile</Link></li>
           <li><a onClick={logout}>Logout</a></li>
-          {/* <li><button onClick={logout}>Logout</button></li> */}
+          <li><a href="#">{myToken.email}</a></li>
         </ul> 
         :       
         <ul>
@@ -43,7 +42,7 @@ export default function TopNav() {
           <li><a href="#">Soutions <FontAwesomeIcon icon={faAngleDown} size="xs"/></a></li>
           <li><a href="#">Products <FontAwesomeIcon icon={faAngleDown} size="xs"/></a></li>
           <li><a href="#">Pricing <FontAwesomeIcon icon={faAngleDown} size="xs"/></a></li>
-          <li><a href="#" onClick={toggleDeveloperMode}>Developer Mode</a></li>
+          <li><a href="#">A Working Prototype</a></li>
         </ul>
        }
     </div>

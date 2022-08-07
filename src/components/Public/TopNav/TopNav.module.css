@@ -1,28 +1,37 @@
-.module {
-    border: 1px solid #e3e3e3;
-    background-color: #f4f4f4;
+.Top-Nav {
+  border: 1px solid #e3e3e3;
+  background-color: #f4f4f4;
 }
 
-.module > ul {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-
-}
-.module > ul > li:first-child {
-    pointer-events: none;
-    font-weight: bolder;
-
-} 
-
-.module > ul > li > a {
-    display: block;
-    padding: 2em 3em;
-    cursor: pointer;
+.Top-Nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.module > ul > li:hover{
-    background-color: #e3e3e3;
-  
-  }
+.Top-Nav ul li a {
+  display: block;
+  padding: 2em 3em;
+  cursor: pointer;
+}
+
+.Top-Nav ul li:first-child {
+  pointer-events: none;
+  font-weight: bolder;
+}
+
+.Top-Nav ul li:last-child {
+  pointer-events: none;
+  border-left: 1px solid #e3e3e3;
+}
+
+.Top-Nav ul li:hover {
+  background-color: #e3e3e3;
+}
+/*# sourceMappingURL=TopNav.module.css.map */

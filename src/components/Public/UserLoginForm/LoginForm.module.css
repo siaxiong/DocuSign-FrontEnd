@@ -26,6 +26,7 @@
   width: 100%;
   padding: 1.05em;
   border: none;
+  background-color: #4caf50;
 }
 
 .registration-form .registration-form__nav .registration-form__header-buttons {
@@ -60,6 +61,7 @@
   padding: 0.7em;
   margin: 1em auto;
   border: none;
+  background-color: #f2f2f2;
 }
 
 .registration-form .registration-form__create-account-body {

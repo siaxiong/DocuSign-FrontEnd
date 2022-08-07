@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { useAuthContext } from "components/Auth/AuthContext/AuthContext";
 import PendingCSS from "./Pending.module.css";
-import { v4 as uuidv4 } from "uuid";
 
 function Pending() {
 	const {myToken} = useAuthContext();
@@ -28,10 +27,10 @@ function Pending() {
 
 
 	const pdfListUL = <ul>
-		<li className={PendingCSS["listItem-header"]}>
+		<li className={PendingCSS["list__header"]}>
 			<p>File Name</p>
 			<p>Signer</p>
-		</li>;
+		</li>
 		<ul>
 			{pendingFiles?.map((file, index)=>{
 				let tempArr = null;
@@ -40,19 +39,18 @@ function Pending() {
 					file = file[0];
 				}
 	
-				return <li className={PendingCSS["listItem"]} key={index}>
+				return <li className={PendingCSS["list__item"]} key={index}>
 					<a onClick={()=>toggleShowPendingList(index)}>
 						{
 							<>
-								<div className={PendingCSS["listItem-top"]}>
+								<div className={PendingCSS["list__item-top"]}>
 									<p>{`${index+1})`}</p>
-									{console.log(file)}
 									<p>{(file.fk_fileName).substring((file.fk_fileName).indexOf("/")+1)}</p>
 								</div>
 								{showPendingList !== null ? null : <p>{`${file.email}`}</p>}
 
 								<ul className={(showPendingList === index) ? PendingCSS["pendingUserUL_Show"] : PendingCSS["pendingUserUL_Hidden"]}>
-									{ tempArr ? tempArr.map((obj, key2)=><li className={obj.signed ? [PendingCSS["pendingUserLI"], PendingCSS["strikeThrough"]].join(" ") : PendingCSS["pendingUserLI"]} key={key2}>{(key2+1)+ ") " + obj.email}</li>) :
+									{ tempArr ? tempArr.map((obj, key2)=><li className={obj.signed ? [PendingCSS["pendingUserLI"], PendingCSS["strike-through"]].join(" ") : PendingCSS["pendingUserLI"]} key={key2}>{(key2+1)+ ") " + obj.email}</li>) :
 										[file].map((obj, key2)=><li className={obj.signed ? [PendingCSS["pendingUserLI"], PendingCSS["strikeThrough"]].join(" ") : PendingCSS["pendingUserLI"]} key={key2}>{(key2+1)+ ") " + obj.email}</li>)}
 								</ul>
 							</>
@@ -60,13 +58,13 @@ function Pending() {
 					</a>
 				</li>;
 			})}
-		</ul>;
+		</ul>
 	</ul>;		
 
 
 	return (
 		<div>
-			{pendingFiles ? pdfListUL :	<p>Pending</p>}
+			{pendingFiles ? pdfListUL :	<p>No pending files.</p>}
 		</div>
 	);
 }

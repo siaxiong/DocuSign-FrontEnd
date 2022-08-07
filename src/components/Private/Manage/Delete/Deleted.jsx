@@ -2,7 +2,7 @@ import React from "react";
 
 function Deleted() {
 	return (
-		<div>deleted</div>
+		<div>No deleted files.</div>
 	);
 }
 
