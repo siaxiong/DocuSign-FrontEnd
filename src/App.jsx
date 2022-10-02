@@ -12,9 +12,9 @@ function App() {
 
 	const {myToken, setToken} = useAuthContext();
 	const loginURL = "/api/handleSignUp";
-	console.log("🚀 ---------------------------------------------------------🚀");
-	console.log("🚀 -> file: App.jsx -> line 13 -> App -> myToken", myToken);
-	console.log("🚀 ---------------------------------------------------------🚀");
+	// console.log("🚀 ---------------------------------------------------------🚀");
+	// console.log("🚀 -> file: App.jsx -> line 13 -> App -> myToken", myToken);
+	// console.log("🚀 ---------------------------------------------------------🚀");
 	
 	useEffect(()=>{
 		const cachedResult = JSON.parse(sessionStorage.getItem(loginURL));
